@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\DemoController
+  Action: calc
+  Group: Demo
+  Method: POST
+  Path: /demo/calc
+  Authentication: free
+  SymfonyRouteName: demo_calc
+
+Summary: POST-request for calculate
+
+InputForm:
+  body:
+    a: integer required !nullable
+    b: integer required !nullable
+    operation: string Enum(+, -, *, /)
+
+OutputForm:
+  $scalar: integer

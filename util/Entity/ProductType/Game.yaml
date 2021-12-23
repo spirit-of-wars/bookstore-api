@@ -1,0 +1,9 @@
+name: ProductType\Game
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  composition: text # Состав набора !! найти в проекте какой id
+
+relations:
+  product: (--) Product

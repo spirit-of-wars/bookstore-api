@@ -1,0 +1,44 @@
+name: ProductData\Data1C
+attributes:
+  isbn:
+    ru: ISBN
+    en: ISBN
+  id1c:
+    ru: ID в 1С
+    en: 1C ID
+  group1c:
+    ru: Группа в 1С
+    en: 1C group
+  itf14:
+    ru: ITF-14
+    en: ITF-14
+  vat:
+    ru: НДС
+    en: VAT
+  quantityPerPack:
+    ru: Количество в пачке
+    en: Quantity per pack
+  rrPrice:
+    ru: Рекомендованная розничная цена
+    en: Recommended retail price
+  weight:
+    ru: Вес
+    en: Weight
+  height:
+    ru: Высота
+    en: Height
+  width:
+    ru: Ширина
+    en: Width
+  length:
+    ru: Длина
+    en: Length
+  ageLimit:
+    ru: Возрастное ограничение
+    en: Age limit
+  isActive:
+    ru: Запись активна
+    en: Is active
+  isDefined:
+    ru: Запись определена
+    en: Is defined

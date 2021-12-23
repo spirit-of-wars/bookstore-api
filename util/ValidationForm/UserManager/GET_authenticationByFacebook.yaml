@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: authenticationByFacebook
+  Group: UserManager
+  Method: GET
+  Path: /auth/by-facebook
+  Authentication: free
+  SymfonyRouteName: authentication_by_facebook
+
+Summary:
+  en: user authentication by FB
+  ru: аутентификация пользователя по FB
+
+InputForm:
+  query:
+    code: string required
+    redirectUri: string required
+
+OutputForm:
+  accessToken: string
+  refreshToken: string

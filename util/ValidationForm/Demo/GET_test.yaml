@@ -1,0 +1,15 @@
+MetaData:
+  Controller: App\Controller\DemoController
+  Action: test
+  Group: Demo
+  Method: GET
+  Path: /demo/test
+  Authentication: free
+  SymfonyRouteName: demo_test
+
+Summary: Simple GET-request
+
+InputForm: {}
+
+OutputForm:
+  $scalar: string example("Hello")

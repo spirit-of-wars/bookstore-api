@@ -1,0 +1,9 @@
+    /**
+     * @return array
+     */
+    public static function getReadOnlyAttributesList()
+    {
+        return array_merge(parent::getReadOnlyAttributesList(), [
+<attributes>
+        ]);
+    }

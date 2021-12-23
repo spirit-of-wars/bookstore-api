@@ -1,0 +1,10 @@
+name: ProductType\Kit
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  content: dict #состав/набор
+
+relations:
+  product: (--) Product
+  items:   (-<) ProductType\KitItem.kit

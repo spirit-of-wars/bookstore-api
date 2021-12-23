@@ -1,0 +1,11 @@
+name: Auth\ActivateLink
+attributes:
+  link:
+    ru: ссылка для аутентификации
+    en: authentication link
+  isActivated:
+    ru: дата и время активации ссылки
+    en: Link activation date and time
+  expire:
+    ru: время жизни ссылки
+    en: Link lifetime

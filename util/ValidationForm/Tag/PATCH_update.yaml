@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\TagController
+  Action: update
+  Group: Tag
+  Method: PATCH
+  Path: /tag/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: update tag
+  ru: обновить тэг
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: ProductGroup\Tag
+    products: integer[]
+
+OutputForm:
+  $scalar: integer

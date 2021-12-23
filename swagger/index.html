@@ -1,0 +1,121 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="/swagger/swagger-ui.css" >
+    <link rel="icon" type="image/png" href="/swagger/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/swagger/favicon-16x16.png" sizes="16x16" />
+    <style>
+      html
+      {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+      }
+
+      *,
+      *:before,
+      *:after
+      {
+        box-sizing: inherit;
+      }
+
+      body
+      {
+        margin:0;
+        background: #fafafa;
+      }
+
+      .swagger_lang_link {
+        color: #4990E2;
+        cursor: pointer;
+      }
+      .swagger_lang_link:hover {
+        color: #4171be;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="swagger-ui"></div>
+
+    <script src="/swagger/swagger-ui-bundle.js"> </script>
+    <script src="/swagger/swagger-ui-standalone-preset.js"> </script>
+    <script>
+    window.onload = function() {
+      let swaggerLang = localStorage.getItem('swagger_lang') || 'en';
+      let langMap = {
+        en: {
+          contrLang: 'ru',
+          message: 'Russian version'
+        },
+        ru: {
+          contrLang: 'en',
+          message: 'Английская версия'
+        }
+      };
+      let langData = langMap[swaggerLang];
+
+      // Begin Swagger UI call region
+      const ui = SwaggerUIBundle({
+        url: window.location.protocol + "//" + window.location.hostname + "/swagger/" + swaggerLang + ".json",
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout"
+      });
+      window.ui = ui;
+      // End Swagger UI call region
+
+      //Begin MIF
+      var lockBox = document.createElement('div');
+      lockBox.style.position = 'absolute';
+      lockBox.style.top = '60px';
+      lockBox.style.left = '0';
+      lockBox.style.bottom = '0';
+      lockBox.style.right = '0';
+      lockBox.style.backgroundColor = 'white';
+      document.body.appendChild(lockBox);
+      var loadCounter = 0;
+
+      let authWaiter = setInterval(()=>{
+        let authWrapper = document.getElementsByClassName('auth-wrapper')[0];
+        if (!authWrapper) return;
+        clearInterval(authWaiter);
+        authWrapper.style.visibility = 'hidden';
+        loadCounter++;
+      }, 100);
+
+      let langWaiter = setInterval(()=>{
+        let mifDesc = document.getElementById('mif-desc');
+        if (!mifDesc) return;
+        clearInterval(langWaiter);
+
+        let p = mifDesc.parentElement;
+        p.innerHTML = p.innerHTML.replace('#lang#', '<span id="lang_switcher" class="swagger_lang_link">' + langData.message + '</span>');
+        let langSwitcher = document.getElementById('lang_switcher');
+        langSwitcher.addEventListener('click', ()=>{
+          localStorage.setItem('swagger_lang', langData.contrLang);
+          location.reload();
+        });
+        loadCounter++;
+      }, 100);
+
+      let waiter = setInterval(()=>{
+        if (loadCounter < 2) return;
+        clearInterval(waiter);
+        document.body.removeChild(lockBox);
+      }, 500);
+      // End MIF
+    }
+  </script>
+  </body>
+</html>

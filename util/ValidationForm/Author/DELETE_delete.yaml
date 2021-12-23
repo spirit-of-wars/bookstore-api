@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\AuthorController
+  Action: delete
+  Group: Author
+  Method: DELETE
+  Path: /author/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: delete author
+  ru: Удалить автора
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("author deleted")

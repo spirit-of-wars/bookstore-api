@@ -1,0 +1,11 @@
+name: Auth\AccessToken
+attributes:
+  token:
+    ru: ключ для аутентификации пользователя
+    en: user authentication token
+  activatedAt:
+    ru: дата и время активации токена
+    en: Token activation date and time
+  expire:
+    ru: время жизни токена
+    en: token lifetime

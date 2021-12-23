@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\SeriesController
+  Action: update
+  Group: Series
+  Method: PATCH
+  Path: /series/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: update series
+  ru: обновить серию
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: ProductGroup\Series
+    products: integer[]
+
+OutputForm:
+  $scalar: integer

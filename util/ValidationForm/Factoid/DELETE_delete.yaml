@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\FactoidController
+  Action: delete
+  Group: Factoid
+  Method: DELETE
+  Path: /factoid/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: delete factoid
+  ru: удалить фактоид
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("factoid removed")

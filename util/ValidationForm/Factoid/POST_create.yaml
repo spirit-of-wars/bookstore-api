@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\FactoidController
+  Action: create
+  Group: Factoid
+  Method: POST
+  Path: /factoid/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: create factoid
+  ru: создать фактоида
+
+InputForm:
+  body:
+    $entity:
+      $name: VirtualPageResource\Factoid
+      $relations: all
+
+OutputForm:
+  $scalar: integer

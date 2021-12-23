@@ -1,0 +1,10 @@
+name: ProductType\Poster
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  count: integer [1-] # количество предметов
+  formatSize: string # форматы А4, А6 и т.д.
+
+relations:
+  product: (--) Product

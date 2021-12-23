@@ -1,0 +1,24 @@
+MetaData:
+  Controller: App\Controller\BannerController
+  Action: getList
+  Group: Banner
+  Method: GET
+  Path: /banner/list
+  Authentication: free
+  SymfonyRouteName: get_list
+
+Summary:
+  en: get list banners
+  ru: получить список баннеров
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+    id: integer[]
+
+OutputForm:
+  $entity:
+    $name: VirtualPageResource\Banner

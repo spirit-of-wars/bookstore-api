@@ -1,0 +1,17 @@
+MetaData:
+  Controller: App\Controller\ResourceController
+  Action: update
+  Group: Resource
+  Method: POST
+  Path: /resource/update/{id}
+  Authentication: free
+  SymfonyRouteName: update_resource
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity: Resource
+
+OutputForm:
+  $scalar: integer

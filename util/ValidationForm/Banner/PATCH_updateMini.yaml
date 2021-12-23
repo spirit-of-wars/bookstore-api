@@ -1,0 +1,27 @@
+MetaData:
+  Controller: App\Controller\BannerController
+  Action: updateMini
+  Group: Banner
+  Method: PATCH
+  Path: /banner/mini/{id}
+  Authentication: required
+  SymfonyRouteName: update_mini
+
+Summary:
+  en: update mini banner
+  ru: изменить аттрибуты сущности мини баннера
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: VirtualPageResource\Banner
+      $except: [frequency, dataActiveTo, dataActiveFrom]
+      $relations: [bannerShelves, virtualPages]
+    miniBannerImage:
+      $type: integer
+      $description: resource id
+
+OutputForm:
+  $scalar: integer

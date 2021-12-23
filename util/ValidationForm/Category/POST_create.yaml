@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\CategoryController
+  Action: create
+  Group: Category
+  Method: POST
+  Path: /category/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: create category, subCategorie = array, parentCategory = integer
+  ru: создать категорию, дочернии категории subCategorie = array, для указания родительской parentCategory = integer
+
+InputForm:
+  body:
+    $entity:
+      $name: ProductGroup\Category
+      $relations: [parentCategory]
+
+OutputForm:
+  $scalar: integer

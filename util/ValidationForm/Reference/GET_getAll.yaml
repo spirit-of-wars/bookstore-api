@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\ReferenceController
+  Action: getAll
+  Group: Reference
+  Method: GET
+  Path: /reference/
+  Authentication: free
+  SymfonyRouteName: get_all
+
+Summary:
+  en: Reference list
+  ru: Список возможных значений (справочники)
+
+InputForm:
+  query:
+    types: string[] #Enum("App\Enum\ReferenceEnum") TODO реализовать функционал применения констраинта для элемента массива
+
+OutputForm:
+  $scalar: array #TODO!

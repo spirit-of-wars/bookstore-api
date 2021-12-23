@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\SeriesController
+  Action: delete
+  Group: Series
+  Method: DELETE
+  Path: /series/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: delete series
+  ru: удалить серию
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("series is removed")

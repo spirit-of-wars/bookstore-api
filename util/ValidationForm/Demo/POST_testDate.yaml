@@ -1,0 +1,17 @@
+MetaData:
+  Controller: App\Controller\DemoController
+  Action: testDate
+  Group: Demo
+  Method: POST
+  Path: /demo/test-date
+  Authentication: free
+  SymfonyRouteName: demo_test_date
+
+Summary: Test date
+
+InputForm:
+  body:
+    date: datetime
+
+OutputForm:
+  $scalar: string example("Hello")

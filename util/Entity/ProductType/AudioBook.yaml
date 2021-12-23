@@ -1,0 +1,12 @@
+name: ProductType\AudioBook
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  duration: string # Продолжительность книги, новое поле. Формат чч:мм
+  rightsExpiration: datetime # окончание прав, новое поле; Продается до; 149; Дата когда заканчивается продажа; value = 2017-05-01 00:00:00
+
+relations:
+  product: (--) Product
+
+  reader: (>-) AudioBookReader.audioBooks

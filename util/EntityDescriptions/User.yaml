@@ -1,0 +1,20 @@
+name: User
+attributes:
+  email:
+    ru: электронная почта пользователя
+    en: e-mail link
+  isConfirmed:
+    ru: статус подтверждения почты
+    en: mail confirmation status
+  isActive:
+    ru: статус активности пользователя
+    en: user activity status
+  firstname:
+    ru: Имя пользователя
+    en: firstname user
+  surname:
+    ru: Фамилия пользователя
+    en: surname user
+  spent:
+    ru: Сумма потреченных пользователем средств в рублях
+    en: The amount of funds debited by the user in rub

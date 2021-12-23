@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: authenticationByCode
+  Group: UserManager
+  Method: POST
+  Path: /auth/by-code
+  Authentication: free
+  SymfonyRouteName: authentication_by_code
+
+Summary:
+  en: auth by code
+  ru: Аутентификация по коду
+
+InputForm:
+  body:
+    code: integer
+
+OutputForm:
+   accessToken: string
+   refreshToken: string

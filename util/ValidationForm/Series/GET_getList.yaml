@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\SeriesController
+  Action: getList
+  Group: Series
+  Method: GET
+  Path: /series/list
+  Authentication: required
+  SymfonyRouteName: get_list
+
+Summary:
+  en: get all series
+  ru: получить все серии
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+
+OutputForm:
+  $entity:
+    $name: ProductGroup\Series

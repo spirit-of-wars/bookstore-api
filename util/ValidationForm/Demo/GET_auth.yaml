@@ -1,0 +1,15 @@
+MetaData:
+  Controller: App\Controller\DemoController
+  Action: auth
+  Group: Demo
+  Method: GET
+  Path: /demo/auth
+  Authentication: required
+  SymfonyRouteName: demo_auth
+
+Summary: GET-request with authentication
+
+InputForm: {}
+
+OutputForm:
+  $scalar: string example("Hello, user %name%!")

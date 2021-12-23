@@ -1,0 +1,11 @@
+name: ProductType\Badge
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  material: string #Материал
+  width: integer #мм
+  height: integer #мм
+
+relations:
+  product: (--) Product

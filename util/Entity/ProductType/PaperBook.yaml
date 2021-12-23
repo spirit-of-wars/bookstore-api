@@ -1,0 +1,13 @@
+name: ProductType\PaperBook
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  priceLabyrinth: integer # Цена Лабиринта на бумажную версию, не тянем старые значения, просто заводим поле
+  linkLabyrinth: string # Ссылка Лабиринта на бумажную версию; 103; value = http://www.labirint.ru/basket/?bw=169970^1&p=9002
+  linkOzon: string #Ссылка Озона на бумажную версию; 104; https://www.ozon.ru/?context=cart&partner=mif&id=3753749
+  linkKnigaBiz: string # Ссылка kniga.biz на бумажную версию; 102; value = http://kniga.biz.ua/book/MIF/133/2385/partner=mif
+  rightsExpiration: datetime # окончание прав; В старой реализации не заполнялось. Скопировать при переносе из электронных (149)
+
+relations:
+  product: (--) Product

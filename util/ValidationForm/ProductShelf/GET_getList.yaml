@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\ProductShelfController
+  Action: getList
+  Group: ProductShelf
+  Method: GET
+  Path: /product-shelf/list
+  Authentication: required
+  SymfonyRouteName: get_list
+
+Summary:
+  en: returns a list of shelves
+  ru: возвращает список полок
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+    code: string[]
+
+OutputForm:
+  $scalar: array #TODO!

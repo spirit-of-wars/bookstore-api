@@ -1,0 +1,39 @@
+name: Product
+behaviors:
+  - ProductBehavior
+  - ChangeTimeSavingBehavior
+  - ResourceGetterBehavior
+
+attributes:
+  oldModxId: integer hidden # modx_site_content.id
+
+  idMif: string #Идентификатор в издательском плане; 257; Редко используется (2 раза); value = 978-5-00100-874-3;
+  type: string !nullable Enum("ProductTypeEnum")
+  slug: string # site_content.alias автоматом генерится из primaryName
+  uri: string # site_content.uri
+  price: integer # 219 !! то же самое для цены.
+  lifeCycleStatus: string Enum("ProductLifeCycleStatusEnum") !nullable default("created") # 1 - создан, 2 - отображается на сайте (не продается), 3 - продается
+  # берем продажность отсюда - Продажа бумажной книги; 220; Чек-бокс - доступна для покупки
+  # берем отображаемость отсюда - modx_site_content.published
+
+  releaseData: text #Выходные данные; 21; Текст визивиг; Все данные про выход продукта;
+  startSaleDate: datetime # Дата начала продаж. Забираем из Настройки modx_site_content.publishedon (unixtime)
+  planedStartSaleDate: datetime # новое поле
+
+  isDimensionlessForPresent: boolean !nullable # Не занимает места в посылке; 432; чек-бокс;
+  isAvailableForPresent: boolean !nullable # Нельзя упаковать в подарок; 437; чек-бокс !! инвертировать
+
+relations:
+  essence: (>-) ProductEssence\Essence.products
+
+  promoTags:      (><) ProductGroup\PromoTag.products # метки; Специальный тип книги; 3;
+  promoData:      (--) ProductData\PromoData.product
+  data1C:         (-<) ProductData\Data1C.product
+  productShelves: (><) VirtualPageResource\ProductShelf.products
+  factoid:        (--) VirtualPageResource\Factoid.product
+
+  resources:       (><) Resource.products
+  # фотогалерея
+  # аудио-отрывок
+  # файлы ЭК
+  # файлы АК

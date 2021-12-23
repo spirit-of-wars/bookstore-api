@@ -1,0 +1,10 @@
+name: ProductType\Course
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  comment: string
+  parameters: dict
+
+relations:
+  product: (--) Product

@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\PromoTagController
+  Action: getOne
+  Group: PromoTag
+  Method: GET
+  Path: /promo-tag/{id}
+  Authentication: free
+  SymfonyRouteName: get_one
+
+Summary:
+  en: get promo tags by id
+  ru: получить промотэг по id
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entity:
+    $name: ProductGroup\PromoTag

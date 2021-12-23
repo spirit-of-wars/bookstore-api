@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\PromoTagController
+  Action: update
+  Group: PromoTag
+  Method: PATCH
+  Path: /promo-tag/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: update promo tag
+  ru: изменить промотэг
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: ProductGroup\PromoTag
+      $relations: [products]
+
+OutputForm:
+  $scalar: integer

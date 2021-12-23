@@ -1,0 +1,50 @@
+<?php
+
+namespace App\Repository<namespace>;
+
+use App\Entity<namespace_name>;
+use App\Repository\BaseRepository;
+use Doctrine\Common\Persistence\ManagerRegistry;
+
+/**
+ * @method <name>|null find($id, $lockMode = null, $lockVersion = null)
+ * @method <name>|null findOneBy(array $criteria, array $orderBy = null)
+ * @method <name>[]    findAll()
+ * @method <name>[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ */
+class <name>Repository extends BaseRepository
+{
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, <name>::class);
+    }
+
+    // /**
+    //  * @return <name>[] Returns an array of <name> objects
+    //  */
+    /*
+    public function findByExampleField($value)
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.exampleField = :val')
+            ->setParameter('val', $value)
+            ->orderBy('t.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    */
+
+    /*
+    public function findOneBySomeField($value): ?<name>
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+    */
+}

@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: authenticationByVk
+  Group: UserManager
+  Method: GET
+  Path: /auth/by-vk
+  Authentication: free
+  SymfonyRouteName: authentication_by_vk
+
+Summary:
+  en: user authentication by VK
+  ru: аутентификация пользователя по ВК
+
+InputForm:
+  query:
+    code: string required
+    redirectUri: string required
+
+OutputForm:
+  accessToken: string
+  refreshToken: string

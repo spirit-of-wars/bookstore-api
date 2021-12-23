@@ -1,0 +1,14 @@
+name: Auth\ConfirmLink
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  token: string
+  code: integer
+  isActivated: boolean
+  expire: datetime
+
+relations:
+  refreshToken: (--fk) Auth\RefreshToken.confirmLink
+  accessToken: (--fk) Auth\AccessToken.confirmLink
+  user: (--fk) User.confirmLink

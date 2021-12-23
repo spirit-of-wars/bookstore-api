@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\ProductShelfController
+  Action: getOne
+  Group: ProductShelf
+  Method: GET
+  Path: /product-shelf/{id}
+  Authentication: required
+  SymfonyRouteName: get_one
+
+Summary:
+  en: returns a shelf by id
+  ru: возвращает полку по id
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entity:
+    $name: VirtualPageResource\ProductShelf

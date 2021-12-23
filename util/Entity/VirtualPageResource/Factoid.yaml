@@ -1,0 +1,17 @@
+name: VirtualPageResource\Factoid
+
+behaviors:
+  - ChangeTimeSavingBehavior
+  - ResourceGetterBehavior
+
+attributes:
+  name: string !nullable Length(min=1)
+  code: string !nullable Length(min=1)
+  description: string !nullable Length(min=1)
+  type: string !nullable default("common")
+
+relations:
+  image: (--) Resource
+
+  product: (--fk) Product.factoid
+  virtualPages: (><) VirtualPage.factoids

@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\SeriesController
+  Action: create
+  Group: Series
+  Method: POST
+  Path: /series/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: created series
+  ru: создать серию
+
+InputForm:
+  body:
+    $entity:
+      $name: ProductGroup\Series
+    products: integer[]
+
+OutputForm:
+  $scalar: integer

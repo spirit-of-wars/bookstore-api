@@ -1,0 +1,9 @@
+name: Auth\Role
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  name: string !nullable Enum("UserRolesEnum")
+
+relations:
+  users: (><) User.roles

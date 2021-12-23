@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\ProductController
+  Action: getOne
+  Group: Product
+  Method: GET
+  Path: /product/{id}
+  Authentication: free
+  SymfonyRouteName: get_one
+
+Summary:
+  en: Product data
+  ru: Данные продукта
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entities:
+    - Product
+    - ProductEssence\Essence

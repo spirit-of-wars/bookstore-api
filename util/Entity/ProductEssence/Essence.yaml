@@ -1,0 +1,33 @@
+name: ProductEssence\Essence
+behaviors:
+  - ChangeTimeSavingBehavior
+  - ResourceGetterBehavior
+
+attributes:
+  fullName: string !nullable MifName() # Полное огромное название. По нему будет матчинг вместо isbn с 1с
+  primaryName: string !nullable MifName() # Из-за дизайнеров некоторые названия пилятся на две части. site_content.pagetitle
+  secondaryName: string # Из-за дизайнеров некоторые названия пилятся на две части site_content.longtitle
+
+  description: text # site_content.description
+  fullDescription: text # 19 визивиг!
+
+  recommendations: dict # Рекомендации; 106; Список экспертов и их рекомендаций
+  promoStickers: dict
+
+relations:
+  products: (-<) Product.essence
+
+  sameEssences:   (><) ProductEssence\Essence.essencesWithMe  #Похожие товары; 16; Множественый выпадающий список, на сущность книги; value = 1618||1950||2589
+  essencesWithMe: (><) ProductEssence\Essence.sameEssences
+
+  category: (>-) ProductGroup\Category.essences # category; 167; множественный список, по сути не является категорией а тематической группой
+  tags:     (><) ProductGroup\Tag.essences  # это чего такое?
+  series:   (>-) ProductGroup\Series.essences #Праздник/Серия (связанные товары); в старой реализации помогает запрос: SELECT '', 0 UNION SELECT name, id FROM relations
+  author:   (>-) Author.selfProducts #Автор книги; 14; Выпадающий список с сущностью авторов; value = 214
+  coAuthor: (><) Author.coAuthoredProducts #соавторы; 15; Множественный выпадающий список соавторов; Тоже завязка на сущность; value = 247||257
+
+  resources: (><) Resource.essences
+  # развороты
+  # ссылка на видео
+  # отрывок книги PDF
+  # отрывок для рассылок PDF

@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\ProductShelfController
+  Action: create
+  Group: ProductShelf
+  Method: POST
+  Path: /product-shelf/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: create shelf
+  ru: создать полку
+
+InputForm:
+  body:
+    $entity:
+      $name: VirtualPageResource\ProductShelf
+      $relations: all
+
+OutputForm:
+  $scalar: integer

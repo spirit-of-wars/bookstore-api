@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\BannerController
+  Action: delete
+  Group: Banner
+  Method: DELETE
+  Path: /banner/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: remove banner
+  ru: удалить баннер
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("banner deleted")

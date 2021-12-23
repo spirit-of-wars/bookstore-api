@@ -1,0 +1,34 @@
+name: ProductType\Certificate
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  comment: string
+  parameters: dict
+#  oldId: integer
+#  status: integer
+#  code: integer
+#  startBalance: integer
+#  balance: integer
+#  oldBoughtUserId: integer
+#  oldBoughtCompanyId: integer
+#  isBought: integer
+#  oldStorageUserId: integer
+#  oldUseUserId: integer
+#  ttlDays: integer
+#  dateCreated: datetime
+#  dateBought: datetime
+#  sentTo1c: datetime
+#  dateStorage: datetime
+#  dateClosed: datetime
+#  dateExpired: datetime
+#  dateBlocked: datetime
+#  dateStartUse: datetime
+
+relations:
+  product: (--) Product
+#  todo необходимы модели User и Company
+#  boughtUser: (-<) User.boughtCertificates
+#  useUser: : (-<) User.useCertificates
+#  storageUser: : (-<) User.storageCertificates # - это юзается?
+#  boughtCompany: : (-<) Company.boughtCertificates

@@ -1,0 +1,26 @@
+MetaData:
+  Controller: App\Controller\VirtualPageController
+  Action: getList
+  Group: VirtualPage
+  Method: GET
+  Path: /page/list
+  Authentication: free
+  SymfonyRouteName: get_list
+
+Summary:
+  en: Virual page List
+  ru: Список виртуальных страниц
+
+Description:
+  en: For filter pages by level, you need to use the level GET-parameter (for example, level = 1)
+  ru: Для фильтрации страниц по уровню нужно использовать GET-параметр level (например level = 1)
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+
+OutputForm:
+  $scalar: array #TODO!

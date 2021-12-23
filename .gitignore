@@ -1,0 +1,35 @@
+.idea
+.vscode
+###> symfony/framework-bundle ###
+/Unversion/*
+/.env.local
+/.env.local.php
+/.env.*.local
+/.env.test
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+/phpunit.xml.dist
+###< symfony/phpunit-bridge ###
+
+#swagger
+/swagger/en.json
+/swagger/ru.json
+/swagger/src
+
+#auto generated files
+/util/ValidationFormCompiled
+
+#dev upload dir
+public/assets/
+public/files/
+
+/src/Controller/DevController.php
+php_errors.log

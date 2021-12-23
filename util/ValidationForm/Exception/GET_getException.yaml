@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\ExceptionController
+  Action: getException
+  Group: Exception
+  Method: GET
+  Path: /exception/get-by-code
+  Authentication: free
+  SymfonyRouteName: get_by_code
+
+Summary: wtf?
+
+InputForm:
+  query:
+    auth: string require
+    pub: string require
+    code: string require
+    date: string
+
+OutputForm: {}

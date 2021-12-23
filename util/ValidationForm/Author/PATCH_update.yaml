@@ -1,0 +1,22 @@
+MetaData:
+  Controller: App\Controller\AuthorController
+  Action: update
+  Group: Author
+  Method: PATCH
+  Path: /author/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: update data author
+  ru: Обновить данные автора
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: Author
+
+OutputForm:
+  $scalar: integer

@@ -1,0 +1,15 @@
+name: ProductType\Bag
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  box: string #Упаковка
+  material: string #Материал
+  width: integer #мм
+  height: integer #мм
+  depth: integer #мм
+  handleLength: integer #мм
+  handleWidth: integer #мм
+
+relations:
+  product: (--) Product

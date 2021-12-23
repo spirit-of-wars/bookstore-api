@@ -1,0 +1,42 @@
+name: Resource
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  type: string !nullable Enum("ResourceTypeEnum")
+  name: string !nullable
+  assigment: string nullable Enum("ResourceAssigmentEnum")
+  path: string
+  format: string nullable Enum("FileTypeEnum")
+  resProperties: dict
+  description: text
+
+relations:
+  products: (><) Product.resources
+  essences: (><) ProductEssence\Essence.resources
+  banners: (><) VirtualPageResource\Banner.resources
+
+  #  video: string # Ссылка на видео; 90; value = //www.youtube.com/embed/CfF1YM091Nc
+  #  videoDescription: text # Описание видео;89; value = Что говорит Йонас Риддерстрале о книге.
+  #  videoList: # Список видео; 143; Список из ссылки и описания;
+  #  blogPosts: dict # Посты из блога; 346; Список текстовых полей; value = [{"MIGX_id":"1","name":"\u0411\u043b\u043e\u0433 \u0414\u0435\u0442\u0438","title":"\u041d\u043e\u0432\u044b\u0435 \u0437\u0430\u043f\u0438\u0441\u0438 \u0432 \u041f\u0430\u043f\u0430\u043c\u0430\u043c\u0430\u043c","query_posts":"blog=deti&showposts=10&order=DESC"}]
+  #  stickers: manyToMany Sticker # Стикеры; 107; Список из Текста и Стиля. Под загружаемой книгой три кружка разного цвета с продающимися слоганами. Стиль возможно другая сущность? value = [{"MIGX_id":"1","stickerText":"\u042d\u0442\u043e","stickerStyle":"sticker-yellow"}]
+  #  photo: manyToMany Photo # Фотографии; 108; Список загружаемых изображений. ; value = [{"MIGX_id":"1","photo":"assets\/images\/books\/good-to-great\/foto\/4okv.png","description":""}]
+  #  freeBlock: manyToMany FreeBlock # Текст для свободного блока; 162; Вставляется че угодно. Список из заголовка и текста визивига. value = [{"MIGX_id":"1","title":"\u041e \u043a\u043d\u0438\u0433\u0430\u0445","text":"<p><strong>Тут дофига всякого текста, поверьте<\/p>"}]
+
+  # kit
+  # backKitBlock: string # фон блока комплекта; 314
+  # backKitBlockMobile: string # фон блока комплекта; 315
+
+  # source
+  #  spreads: dict # Развороты; 105; Список загружаемых изображений. Ссылка, Описание.
+  #  coverVersions: #Варианты обложки; 93; Список загружаемых файлов; Редко используется (9 раз); value = [{"MIGX_id":"1","pageImage":"assets\/images\/new_card\/krdi-kak-hudozhnik-new\/kkh.jpg"}]
+  #  readingPassage: string #Отрывок для чтения на новой карточке книги; 87; Ссылка на загружаемый pdf - файл; value = assets/files/bookparts/017/otnosheniya_read.pdf
+  #  audioFiles: dict # Файлы аудио книги; 450; Список файлов с возможностью из загрузить; value = [{"MIGX_id":"1","format":"zip","file":"bookfiles\/audio\/mp3\/put-vyidayushhixsya-lyudej.zip","filename":"put-vyidayushhixsya-lyudej.zip"}]
+  #  excerptAudioFiles: dict # Отрывки из книги; 147; Список файлов (аудио) с возможностью из загрузить; value = [{"MIGX_id":"1","caption":"\u0421\u043f\u0430\u0441\u0438\u0442\u0435!","file":"assets\/files\/bookparts\/050\/Kamasutra_dlya_oratora.mp3"}]
+
+  #  banner
+  #  image320: string
+  #  image480: string
+  #  image960: string
+  #  backgroundImage: string # только для мини. Остальные три только для большого

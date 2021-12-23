@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\TagController
+  Action: create
+  Group: Tag
+  Method: POST
+  Path: /tag/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: create tag
+  ru: создать тэг
+
+InputForm:
+  body:
+    $entity:
+      $name: ProductGroup\Tag
+    products: integer[]
+
+OutputForm:
+  $scalar: integer

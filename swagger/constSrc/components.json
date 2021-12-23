@@ -1,0 +1,145 @@
+{
+  "securitySchemes": {
+    "ApiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Access-Token"
+    }
+  },
+
+  "responses": {
+    "BadRequestError": {
+      "description": {
+        "en": "Bad request",
+        "ru": "Ошибочный запрос"
+      },
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "boolean",
+                "example": false
+              },
+              "errorCode": {
+                "type": "integer",
+                "example": 400
+              },
+              "errorDetails": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 460
+                    },
+                    "parameter": {
+                      "type": "string",
+                      "example": "property_name"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Текст ошибки"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "UnauthorizedError": {
+      "description": {
+        "en": "Access token is missing or invalid",
+        "ru": "Токен доступа отсутствует или неверный"
+      },
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "boolean",
+                "example": false
+              },
+              "errorCode": {
+                "type": "integer",
+                "example": 401
+              },
+              "errorDetails": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "Токен доступа отсутствует или неверный"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ForbiddenError": {
+      "description": {
+        "en": "Resource is unavailable",
+        "ru": "Ресурс недоступен"
+      },
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "boolean",
+                "example": false
+              },
+              "errorCode": {
+                "type": "integer",
+                "example": 403
+              },
+              "errorDetails": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "У Вас не хватает прав для этого ресурса"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "NotFoundError": {
+      "description": {
+        "en": "Resource is not found",
+        "ru": "Ресурс не найден"
+      },
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "success": {
+                "type": "boolean",
+                "example": false
+              },
+              "errorCode": {
+                "type": "integer",
+                "example": 404
+              },
+              "errorDetails": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "example": "Ресурс не найден"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

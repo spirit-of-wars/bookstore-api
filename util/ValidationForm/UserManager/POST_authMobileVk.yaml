@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: authMobileVk
+  Group: UserManager
+  Method: POST
+  Path: /auth/mobile/by-vk
+  Authentication: free
+  SymfonyRouteName: authentication_mobile_by_vk
+
+Summary:
+  en: auth by vk for mobile app
+  ru: аутентификация через vk для мобильного приложения
+
+InputForm:
+  body:
+    token: string required
+
+OutputForm:
+  accessToken: string
+  refreshToken: string

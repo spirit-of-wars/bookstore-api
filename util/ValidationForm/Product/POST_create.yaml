@@ -1,0 +1,125 @@
+MetaData:
+  Controller: App\Controller\ProductController
+  Action: create
+  Group: Product
+  Method: POST
+  Path: /product/{type}
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary: "@summary"
+
+InputForm:
+  path:
+    type: string Enum("ProductTypeEnum") -docIgnore
+  body:
+    $entities:
+      - $name: Product
+        $except: [type, uri, slug]
+        $relations: [promoTags]
+      - $name: ProductEssence\Essence
+        $relations: [category, series, tags]
+      - $name: "@productType"
+        $except: "@productTypeExcept"
+      - $name: "@productEssence"
+        $relations: "@productEssenceRelations"
+    image:
+      $type: integer
+      $description: resource id
+    $concat: "@list"
+    essenceId: "@essence"
+
+OutputForm:
+  id: integer
+  message: string example("Создан новый продукт")
+
+Mapping:
+  by: type
+  map:
+    paper_book:
+      productType: ProductType\PaperBook
+      productTypeExcept: [priceLabyrinth]
+      productEssence: ProductEssence\Book
+      productEssenceRelations: [creativePartners]
+      list:
+        coverImage:
+          $type: integer
+          $description: resource id
+        spineImage:
+          $type: integer
+          $description: resource id
+      essence: integer
+      summary:
+         ru: Создание товара (бумажная книга)
+         en: Create product (paper book)
+    e_book:
+      productType: ProductType\EBook
+      productEssence: ProductEssence\Book
+      productEssenceRelations: [creativePartners]
+      essence: integer
+      summary:
+         ru: Создание товара (электронная книга)
+         en: Create product (e-book)
+    audio_book:
+      productType: ProductType\AudioBook
+      productEssence: ProductEssence\Book
+      productEssenceRelations: [creativePartners]
+      essence: integer
+      summary:
+        ru: Создание товара (аудиокнига)
+        en: Create product (audiobook)
+    course:
+      productType: ProductType\Course
+      summary:
+        ru: Создание товара (курс)
+        en: Create product (course)
+    game:
+      productType: ProductType\Game
+      summary:
+        ru: Создание товара (игра)
+        en: Create product (game)
+    notepad:
+      productType: ProductType\Notepad
+      summary:
+        ru: Создание товара (блокнот)
+        en: Create product (notepad)
+    bookmark:
+      productType: ProductType\Bookmark
+      summary:
+        ru: Создание товара (закладка)
+        en: Create product (bookmark)
+    poster:
+      productType: ProductType\Poster
+      summary:
+        ru: Создание товара (плакат)
+        en: Create product (poster)
+    postcard:
+      productType: ProductType\Postcard
+      summary:
+        ru: Создание товара (открытка)
+        en: Create product (postcard)
+    sticker:
+      productType: ProductType\Sticker
+      summary:
+        ru: Создание товара (стикер)
+        en: Create product (sticker)
+    cloth:
+      productType: ProductType\Cloth
+      summary:
+        ru: Создание товара (одежда)
+        en: Create product (cloth)
+    badge:
+      productType: ProductType\Badge
+      summary:
+        ru: Создание товара (значок)
+        en: Create product (badge)
+    bag:
+      productType: ProductType\Bag
+      summary:
+        ru: Создание товара (сумка)
+        en: Create product (bag)
+    certificate:
+      productType: ProductType\Certificate
+      summary:
+        ru: Создание товара (сертификат)
+        en: Create product (certificate)

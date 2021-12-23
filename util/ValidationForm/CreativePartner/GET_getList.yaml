@@ -1,0 +1,22 @@
+MetaData:
+  Controller: App\Controller\CreativePartnerController
+  Action: getList
+  Group: CreativePartner
+  Method: GET
+  Path: /creative-partner/list
+  Authentication: free
+  SymfonyRouteName: get_list
+
+Summary:
+  en: Creative partner list
+  ru: Список креативных партнеров
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+
+OutputForm:
+  $scalar: array #TODO!

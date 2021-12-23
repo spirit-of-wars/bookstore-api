@@ -1,0 +1,9 @@
+name: ProductGroup\Series
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  name: string
+
+relations:
+  essences: (-<) ProductEssence\Essence.series

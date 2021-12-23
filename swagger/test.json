@@ -1,0 +1,387 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "MIF API",
+    "version": "1.0.0",
+    "description": "API documentation for MIF web-shop"
+  },
+  "servers": [
+    {
+      "url": "http:\/\/mifapi",
+      "description": "Local dev server"
+    }
+  ],
+
+
+  "paths": {
+
+    "/dev/test": {
+      "get": {
+        "summary": "Get product by ID",
+        "description": "Get one product by its ID",
+        "operationId": "App\\Controller\\DevController::test"
+      },
+      "post": {
+        "summary": "Get product by ID",
+        "description": "Get one product by its ID",
+        "operationId": "App\\Controller\\DevController::testPost"
+      }
+    },
+
+
+
+    "/product/{id}": {
+      "get": {
+        "tags":["product"],
+
+        "summary": "Get product by ID",
+        "description": "Get one product by its ID",
+        "operationId": "App\\Controller\\ProductController::getProduct",
+
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "Success",
+
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "description": "Flag of operation result",
+                      "type": "boolean"
+                    },
+                    "description": {
+                      "description": "Text for operation result",
+                      "type": "string"
+                    },
+                    "product": {
+                      "description": "Requested product",
+                      "type": "object",
+                      "properties": {
+
+
+
+                      }
+
+                    }
+                  }
+                },
+
+                "example": {
+                  "success": true,
+                  "description": "Requested list",
+                  "list": 1
+                }
+
+              }
+            }
+
+
+
+          }
+        }
+      }
+    },
+
+
+
+
+    "/product/list": {
+      "get": {
+        "tags":["product"],
+
+        "summary": "Get products list",
+        "description": "!!!description",
+        "operationId": "App\\Controller\\ProductController::getProductsList",
+
+        "responses": {
+          "200": {
+            "description": "Success",
+
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "description": "Flag of operation result",
+                      "type": "boolean"
+                    },
+                    "description": {
+                      "description": "Text for operation result",
+                      "type": "string"
+                    },
+                    "list": {
+                      "description": "Requested list",
+
+                      "type": "integer!!!!!!!!!!!!!!!"
+
+                    }
+                  }
+                },
+
+                "example": {
+                  "success": true,
+                  "description": "Requested list",
+                  "list": 1
+                }
+
+              }
+            }
+
+
+          }
+        }
+      }
+    },
+
+
+    "/book/create": {
+      "post": {
+        "tags": [
+          "product"
+        ]
+      }
+    },
+
+
+    "/product/create": {
+      "post": {
+        "tags":["product"],
+
+        "summary": "Create product",
+        "description": "Create a product for any type",
+        "operationId": "App\\Controller\\ProductController::createProduct",
+
+        "requestBody": {
+          "description": "Structure for new product",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "description": "**Product type:** `book`",
+
+                    "properties": {
+
+                      "name": {
+                        "required":true,
+                        "type": "string",
+                        "description": "Название (заголовок для книг)"
+                      },
+
+                      "type": {
+                        "required":true,
+                        "type": "string",
+                        "enum": ["book"]
+                      },
+
+                      "description": {
+                        "type": "string"
+                      },
+
+
+                      "detail": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+
+
+                  {
+                    "type": "object",
+                    "description": "**Product type:** `e-book`",
+
+                    "properties": {
+
+                      "name": {
+                        "required":true,
+                        "type": "string"
+                      },
+
+                      "type": {
+                        "required":true,
+                        "type": "string",
+                        "enum": ["e_book"]
+                      },
+
+
+                      "detail": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "duration": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+
+
+                  {
+                    "type": "object",
+                    "description": "**Product type:** `audio-book`",
+
+                    "properties": {
+
+                      "name": {
+                        "required":true,
+                        "type": "string"
+                      },
+
+                      "type": {
+                        "required":true,
+                        "type": "string",
+                        "enum": ["audio_book"]
+                      },
+
+
+                      "detail": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "duration": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+
+
+                ]
+
+
+
+              },
+
+              "example": {
+                "name": "wewe",
+                "type": "book",
+                "detail": {
+                  "title": "wewe wewe"
+                }
+
+              }
+
+
+
+            }
+          }
+        },
+
+
+
+
+        "responses": {
+
+
+
+          "200": {
+            "description": "The product have created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "description": "Flag of operation result",
+                      "type": "boolean"
+                    },
+                    "description": {
+                      "description": "Text for operation result",
+                      "type": "string"
+                    },
+                    "id": {
+                      "description": "The product id",
+                      "type": "integer"
+                    }
+                  }
+                },
+
+                "example": {
+                  "success": true,
+                  "description": "The product have created with follow id",
+                  "id": 1
+                }
+
+              }
+            }
+          }
+
+
+
+
+        }
+      }
+    },
+
+
+
+
+    "/product/{id}/update": {
+      "patch": {
+        "tags":["product"],
+
+        "summary": "Update product",
+        "description": "Update a product by ID",
+        "operationId": "App\\Controller\\ProductController::updateProduct",
+
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+
+
+
+    "/product/{id}/delete": {
+      "delete": {
+        "tags":["product"],
+
+        "summary": "Delete product",
+        "description": "Delete product by ID",
+        "operationId": "App\\Controller\\ProductController::deleteProduct",
+
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+
+
+
+
+
+  }
+}

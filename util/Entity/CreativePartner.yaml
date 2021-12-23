@@ -1,0 +1,15 @@
+name: CreativePartner
+behaviors:
+  - ChangeTimeSavingBehavior
+
+#Партнёр; 84; Партнер помогавший в создании книги. Выпадающий список из site_content. value = 12440
+attributes:
+  oldModxId: integer hidden # modx_site_content.id
+
+  name: string !nullable MifName()  # site_content.pagetitle
+  slug: string  # site_content.alias
+  uri: string   # site_content.uri
+
+relations:
+  logo: (--) Resource
+  books: (><) ProductEssence\Book.creativePartners

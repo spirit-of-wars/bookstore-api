@@ -1,0 +1,10 @@
+name: ProductProperty\Size
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  valueRu: string  # 34-36...
+  valueEu: string  # S, L, XL...
+
+relations:
+  clothes: (><) ProductType\Cloth.sizes

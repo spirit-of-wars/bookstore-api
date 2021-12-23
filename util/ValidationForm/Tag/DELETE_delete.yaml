@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\TagController
+  Action: delete
+  Group: Tag
+  Method: DELETE
+  Path: /tag/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: delete tag
+  ru: удалить таг
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("tag is removed")

@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\ProductController
+  Action: delete
+  Group: Product
+  Method: DELETE
+  Path: /product/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: Delete product
+  ru: Удаление продукта
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  id: integer
+  message: string example("Продукт удалён")

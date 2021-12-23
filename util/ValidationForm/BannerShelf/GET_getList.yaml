@@ -1,0 +1,24 @@
+MetaData:
+  Controller: App\Controller\BannerShelfController
+  Action: getList
+  Group: BannerShelf
+  Method: GET
+  Path: /banner-shelf/list
+  Authentication: required
+  SymfonyRouteName: get_list
+
+Summary:
+  en: get list shelf with banner
+  ru: получить список полок с баннерами
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+    code: string[]
+
+OutputForm:
+  $entity:
+    $name: VirtualPageResource\BannerShelf

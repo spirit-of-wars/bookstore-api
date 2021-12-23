@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: authMobileAppleId
+  Group: UserManager
+  Method: POST
+  Path: /auth/mobile/by-apple-id
+  Authentication: free
+  SymfonyRouteName: authentication_mobile_by_apple_id
+
+Summary:
+  en: auth by apple id for mobile app
+  ru: аутентификация через apple id для мобильного приложения
+
+InputForm:
+  body:
+    token: string required
+
+OutputForm:
+  accessToken: string
+  refreshToken: string

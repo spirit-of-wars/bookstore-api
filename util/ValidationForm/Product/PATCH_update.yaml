@@ -1,0 +1,122 @@
+MetaData:
+  Controller: App\Controller\ProductController
+  Action: update
+  Group: Product
+  Method: PATCH
+  Path: /product/{type}/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary: "@summary"
+
+InputForm:
+  path:
+    id: integer
+    type: string Enum("ProductTypeEnum") -docIgnore
+  body:
+    $entities:
+      - $name: Product
+        $except: [type, uri, slug]
+        $relations: [promoTags]
+      - $name: ProductEssence\Essence
+        $relations: [category, series, tags]
+      - $name: "@productType"
+        $except: "@productTypeExcept"
+      - $name: "@productEssence"
+        $relations: "@productEssenceRelations"
+    $concat: "@list"
+    image:
+      $type: integer
+      $description: resource id
+
+OutputForm:
+  id: integer
+  message: string example("Продукт обновлён")
+
+Mapping:
+  by: type
+  map:
+    paper_book:
+      productType: ProductType\PaperBook
+      productTypeExcept: [priceLabyrinth]
+      productEssence: ProductEssence\Book
+      productEssenceRelations: [creativePartners]
+      list:
+        coverImage:
+          $type: integer
+          $description: resource id
+        spineImage:
+          $type: integer
+          $description: resource id
+      summary:
+        ru: Обновление товара (бумажная книга)
+        en: Update product (paper book)
+    e_book:
+      productType: ProductType\EBook
+      productEssence: ProductEssence\Book
+      productEssenceRelations: [creativePartners]
+      summary:
+        ru: Обновление товара (электронная книга)
+        en: Update product (e-book)
+    audio_book:
+      productType: ProductType\AudioBook
+      productEssence: ProductEssence\Book
+      productEssenceRelations: [creativePartners]
+      summary:
+        ru: Обновление товара (аудиокнига)
+        en: Update product (audiobook)
+    course:
+      productType: ProductType\Course
+      summary:
+        ru: Обновление товара (курс)
+        en: Update product (course)
+    game:
+      productType: ProductType\Game
+      summary:
+        ru: Обновление товара (игра)
+        en: Update product (game)
+    notepad:
+      productType: ProductType\Notepad
+      summary:
+        ru: Обновление товара (блокнот)
+        en: Update product (notepad)
+    bookmark:
+      productType: ProductType\Bookmark
+      summary:
+        ru: Обновление товара (закладка)
+        en: Update product (bookmark)
+    poster:
+      productType: ProductType\Poster
+      summary:
+        ru: Обновление товара (плакат)
+        en: Update product (poster)
+    postcard:
+      productType: ProductType\Postcard
+      summary:
+        ru: Обновление товара (открытка)
+        en: Update product (postcard)
+    sticker:
+      productType: ProductType\Sticker
+      summary:
+        ru: Обновление товара (стикер)
+        en: Update product (sticker)
+    cloth:
+      productType: ProductType\Cloth
+      summary:
+        ru: Обновление товара (одежда)
+        en: Update product (cloth)
+    badge:
+      productType: ProductType\Badge
+      summary:
+        ru: Обновление товара (значок)
+        en: Update product (badge)
+    bag:
+      productType: ProductType\Bag
+      summary:
+        ru: Обновление товара (сумка)
+        en: Update product (bag)
+    certificate:
+      productType: ProductType\Certificate
+      summary:
+        ru: Обновление товара (сертификат)
+        en: Update product (certificate)

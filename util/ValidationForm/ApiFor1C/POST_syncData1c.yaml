@@ -1,0 +1,26 @@
+MetaData:
+  Controller: App\Controller\Neighbor1CController
+  Action: syncData1c
+  Group: ApiFor1C
+  Method: POST
+  Path: /sync-data1c
+  Authentication: free
+  SymfonyRouteName: save_packet_data1c
+
+Summary:
+  ru: Синхронизация данных по товарам с 1С
+  en: Synchronization of data on goods with 1C
+
+InputForm:
+  body:
+    $description:
+      en: Secret key and data array from 1C
+      ru: Секретный ключ и массив данных из 1С
+    auth: string required
+    data: array required
+
+OutputForm:
+  body:
+    $description:
+      ru: В случае успеха вернуть статус 200
+      en: If successful, return status 200

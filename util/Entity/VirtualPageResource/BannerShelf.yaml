@@ -1,0 +1,13 @@
+name: VirtualPageResource\BannerShelf
+
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  name: string !nullable MifName()
+  type: string !nullable Enum("BannerShelfType")
+  code: string !nullable Length(min=1)
+
+relations:
+  banners: (><) VirtualPageResource\Banner.bannerShelves
+  virtualPages: (><) VirtualPage.bannerShelves

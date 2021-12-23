@@ -1,0 +1,27 @@
+MetaData:
+  Controller: App\Controller\ResourceController
+  Action: create
+  Group: Resource
+  Method: POST
+  Path: /resource/
+  Authentication: required
+  SymfonyRouteName: resource_create_resource
+
+Summary:
+  en: created resource
+  ru: создать ресурс
+
+Description:
+  ru:
+    Ссылка на документацию - https://docs.google.com/document/d/1P8dTGwcwxj77M7sQ7o9KrEarLppWPotOK4jhdQNfgfM/edit?usp=sharing
+  en:
+    Documentation - https://docs.google.com/document/d/1P8dTGwcwxj77M7sQ7o9KrEarLppWPotOK4jhdQNfgfM/edit?usp=sharing
+
+InputForm:
+  body:
+    file:
+      $type: string
+      $description: TODO! нет поддержки типа файла для сваггера. Задача на очереди
+
+OutputForm:
+  $scalar: integer

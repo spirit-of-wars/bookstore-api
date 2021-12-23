@@ -1,0 +1,24 @@
+MetaData:
+  Controller: App\Controller\BannerShelfController
+  Action: update
+  Group: BannerShelf
+  Method: PATCH
+  Path: /banner-shelf/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: update shelf banner
+  ru: изменить аттрибуты полки с баннерами
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: VirtualPageResource\BannerShelf
+      $except: [type, code, name]
+      $relations: all
+
+OutputForm:
+  $scalar: integer

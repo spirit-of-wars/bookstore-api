@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\CategoryController
+  Action: getList
+  Group: Category
+  Method: GET
+  Path: /category/list
+  Authentication: free
+  SymfonyRouteName: get_list
+
+Summary:
+  en: get list categories
+  ru: получить список категорий
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+    id: integer[]
+
+OutputForm:
+  $scalar: array #TODO!

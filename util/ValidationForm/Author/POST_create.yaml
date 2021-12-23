@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\AuthorController
+  Action: create
+  Group: Author
+  Method: POST
+  Path: /author/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: create author
+  ru: создать автора
+
+InputForm:
+  body:
+    $entity:
+      $name: Author
+
+OutputForm:
+  $scalar: integer

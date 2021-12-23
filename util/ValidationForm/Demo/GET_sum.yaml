@@ -1,0 +1,18 @@
+MetaData:
+  Controller: App\Controller\DemoController
+  Action: sum
+  Group: Demo
+  Method: GET
+  Path: /demo/sum
+  Authentication: free
+  SymfonyRouteName: demo_sum
+
+Summary: GET-request with parameters for sum
+
+InputForm:
+  query:
+    a: integer required !nullable
+    b: integer required !nullable
+
+OutputForm:
+  $scalar: integer

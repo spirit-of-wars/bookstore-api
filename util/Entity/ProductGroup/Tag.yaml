@@ -1,0 +1,11 @@
+name: ProductGroup\Tag
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  title: string !nullable Length(min=1)
+  slug: string !nullable Length(min=1) Slug()
+  description: text
+
+relations:
+  essences: (><) ProductEssence\Essence.tags

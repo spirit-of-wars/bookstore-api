@@ -1,0 +1,25 @@
+name: VirtualPage
+behaviors:
+  - ChangeTimeSavingBehavior
+  - VirtualPageBehavior
+
+attributes:
+  title: string MifName()
+  slug: text
+  description: text
+  position: integer
+  level: integer inputHidden
+  isMenu: boolean !nullable
+
+relations:
+  subVirtualPages: (-<) VirtualPage.parentVirtualPage
+  parentVirtualPage: (>-) VirtualPage.subVirtualPages
+
+  category: (--) ProductGroup\Category
+  icon: (--) Resource
+
+  bannerShelves:  (><) VirtualPageResource\BannerShelf.virtualPages
+  productShelves: (><) VirtualPageResource\ProductShelf.virtualPages
+  banners:        (><) VirtualPageResource\Banner.virtualPages
+  factoids:       (><) VirtualPageResource\Factoid.virtualPages
+

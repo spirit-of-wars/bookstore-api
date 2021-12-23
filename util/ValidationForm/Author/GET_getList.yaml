@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\AuthorController
+  Action: getList
+  Group: Author
+  Method: GET
+  Path: /author/list
+  Authentication: free
+  SymfonyRouteName: get_list
+
+Summary:
+  en: get list authors
+  ru: получить список авторов
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+
+OutputForm:
+  $entity:
+    $name: Author

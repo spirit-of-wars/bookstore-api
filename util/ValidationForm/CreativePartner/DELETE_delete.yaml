@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\CreativePartnerController
+  Action: delete
+  Group: CreativePartner
+  Method: DELETE
+  Path: /creative-partner/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: Delete the creative partner
+  ru: Удаление креативного партнера
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("creative partner is removed")

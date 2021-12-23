@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\VirtualPageController
+  Action: delete
+  Group: VirtualPage
+  Method: DELETE
+  Path: /page/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: Delete virtual page
+  ru: Удаление виртуальной страницы
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("Virtual page is removed")

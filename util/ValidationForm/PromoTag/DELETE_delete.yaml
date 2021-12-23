@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\PromoTagController
+  Action: delete
+  Group: PromoTag
+  Method: DELETE
+  Path: /promo-tag/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: delete promo tag
+  ru: удалить промотэг
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("promo tag removed")

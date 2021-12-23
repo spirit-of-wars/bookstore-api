@@ -1,0 +1,7 @@
+name: VirtualPageResource\FreeBlock
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  title: string # 162; title
+  text: text # 162; text

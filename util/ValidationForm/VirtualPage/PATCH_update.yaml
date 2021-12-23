@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\VirtualPageController
+  Action: update
+  Group: VirtualPage
+  Method: PATCH
+  Path: /page/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: Data for update virtual page
+  ru: Данные для обновления виртуальной страницы
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: VirtualPage
+      $relations: all
+
+OutputForm:
+  $scalar: integer

@@ -1,0 +1,9 @@
+name: ProductType\Notepad
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  formatSize: string # форматы А4, А6 и т.д.
+
+relations:
+  product: (--) Product

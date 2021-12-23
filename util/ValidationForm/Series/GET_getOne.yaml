@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\SeriesController
+  Action: getOne
+  Group: Series
+  Method: GET
+  Path: /series/{id}
+  Authentication: required
+  SymfonyRouteName: get_one
+
+Summary:
+  en: get series by id
+  ru: получить серию по id
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entity:
+    $name: ProductGroup\Series

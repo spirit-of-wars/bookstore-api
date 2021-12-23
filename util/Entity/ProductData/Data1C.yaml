@@ -1,0 +1,23 @@
+name: ProductData\Data1C
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  isbn: string #ISBN; 11; value = 978-5-00146-814-1 . Префикс 1с не указали, т.к. автоподгрузка нам не нужна дублирующая (возможно в будущем подставим префикс, если будет полная автовыгрузка из 1с)
+  id1c: string # ID в 1C; 222; value = 00000000454
+  group1c: string # Склад; 464;  Данные для склада; Список; value = [{"MIGX_id":1,"isbn":"978-5-00117-741-8","grp":"00000026020","id1c":"00000026020","weight":789,"vat":"20"}]
+  itf14: string # ITF-14; 488; Уточнить что это, но видимо нужное. value = 64600503112422
+  vat: string # НДС в 1C; 428; value = 10
+  quantityPerPack: integer # Кол-во в пачке; 487; value = 6;
+  rrPrice: integer # для всех товаров??
+  weight: integer # Склад; 464;  Данные для склада; Список; value = [{"MIGX_id":1,"isbn":"978-5-00117-741-8","grp":"00000026020","id1c":"00000026020","weight":789,"vat":"20"}]
+  height: integer # Размер бумажной книги (высота); value = 484;
+  width: integer # Размер бумажной книги (ширина); value = 486;
+  length: integer # длина; 485; value = 310;
+  ageLimit: string
+
+  isActive: boolean # Статус активности записи истории
+  isDefined: boolean # Статус привязки к продукту
+
+relations:
+  product: (>-) Product.data1C

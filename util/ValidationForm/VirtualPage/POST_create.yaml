@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\VirtualPageController
+  Action: create
+  Group: VirtualPage
+  Method: POST
+  Path: /page/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary: "@summary"
+
+Description:
+  en: Data for new virtual page
+  ru: Данные для новой виртуальной страницы
+
+InputForm:
+  body:
+    $entity:
+      $name: VirtualPage
+      $relations: all
+
+OutputForm:
+  $scalar: string example("Virtual page is created")

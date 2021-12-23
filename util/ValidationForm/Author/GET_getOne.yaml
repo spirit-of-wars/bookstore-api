@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\AuthorController
+  Action: getOne
+  Group: Author
+  Method: GET
+  Path: /author/{id}
+  Authentication: free
+  SymfonyRouteName: get_one
+
+Summary:
+  en: Get author by id
+  ru: Получить автора по id
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entity:
+    $name: Author

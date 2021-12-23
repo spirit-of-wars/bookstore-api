@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: refreshAccessToken
+  Group: UserManager
+  Method: POST
+  Path: /auth/refresh
+  Authentication: free
+  SymfonyRouteName: refresh_access_token
+
+Summary:
+  en: Generate a pair of new tokens
+  ru: Генерация пары новых токенов
+
+InputForm:
+  query:
+    accessToken: string required
+    refreshToken: string required
+
+OutputForm:
+  accessToken: string
+  refreshToken: string

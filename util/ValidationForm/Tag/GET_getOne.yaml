@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\TagController
+  Action: getOne
+  Group: Tag
+  Method: GET
+  Path: /tag/{id}
+  Authentication: required
+  SymfonyRouteName: get_one
+
+Summary:
+  en: get tag by id
+  ru: получить тэг по id
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entity:
+    $name: ProductGroup\Tag

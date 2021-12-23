@@ -1,0 +1,31 @@
+name: VirtualPageResource\Banner
+
+behaviors:
+  - ChangeTimeSavingBehavior
+  - ResourceGetterBehavior
+
+attributes:
+  name: string !nullable MifName()
+  type: string !nullable inputHidden Enum("BannerType")
+  link: string !nullable Length(min=10)
+  linkTitle: string !nullable Length(min=1)
+  description: string Length(min=1)
+
+  # Только для большого
+  frequency: integer  # Частота показа банера на полке - % вероятности
+  dataActiveTo: datetime
+  dataActiveFrom: datetime
+
+  # Только для мини
+  isActiveMiniBanner: boolean
+
+#  image320: string  # только для большого
+#  image480: string  # только для большого
+#  image960: string  # только для большого
+#  miniBannerImage: string  # только для мини
+
+relations:
+  bannerShelves: (><) VirtualPageResource\BannerShelf.banners
+  virtualPages: (><) VirtualPage.banners
+  resources: (><) Resource.banners
+

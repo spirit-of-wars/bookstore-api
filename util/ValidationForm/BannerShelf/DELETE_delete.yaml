@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\BannerShelfController
+  Action: delete
+  Group: BannerShelf
+  Method: DELETE
+  Path: /banner-shelf/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: remove banner shelf
+  ru: Удалить полку с баннерами
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("shelf banner is removed")

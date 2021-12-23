@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\ProductShelfController
+  Action: delete
+  Group: ProductShelf
+  Method: DELETE
+  Path: /product-shelf/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: remove product shelf
+  ru: удалить полку с товарами
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("shelf removed")

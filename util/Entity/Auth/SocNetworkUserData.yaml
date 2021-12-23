@@ -1,0 +1,11 @@
+name: Auth\SocNetworkUserData
+table: soc_network_user_data
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  code: string Enum("CodeSocNetworkEnum")
+  socNetworkId: string
+
+relations:
+  user: (>-) User.socNetworks

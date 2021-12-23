@@ -1,0 +1,13 @@
+name: AudioBookReader
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  name: string !nullable MifName()
+  enName: string
+  description: text
+  slug: text
+  uri: text
+
+relations:
+  audioBooks: (-<) ProductType\AudioBook.reader

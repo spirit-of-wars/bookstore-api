@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\BannerShelfController
+  Action: create
+  Group: BannerShelf
+  Method: POST
+  Path: /banner-shelf/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: create shelf with banner
+  ru: создать полку с баннерами
+
+InputForm:
+  body:
+    $entity:
+      $name: VirtualPageResource\BannerShelf
+      $relations: all
+
+OutputForm:
+  $scalar: integer

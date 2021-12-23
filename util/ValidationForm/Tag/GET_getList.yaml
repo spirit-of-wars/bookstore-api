@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\TagController
+  Action: getList
+  Group: Tag
+  Method: GET
+  Path: /tag/list
+  Authentication: required
+  SymfonyRouteName: get_list
+
+Summary:
+  en: get all tags
+  ru: получить все тэги
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+
+OutputForm:
+  $entity:
+    $name: ProductGroup\Tag

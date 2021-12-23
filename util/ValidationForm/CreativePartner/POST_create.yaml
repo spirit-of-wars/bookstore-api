@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\CreativePartnerController
+  Action: create
+  Group: CreativePartner
+  Method: POST
+  Path: /creative-partner/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: Create creative partner
+  ru: Создание креативного партнера
+
+InputForm:
+  body:
+    $entity:
+      $name: CreativePartner
+      $relations: all
+
+OutputForm:
+  $scalar: integer

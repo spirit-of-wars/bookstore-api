@@ -1,0 +1,17 @@
+name: ProductEssence\Book
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  originalPrimaryName: string(2048) #Оригинальное название; 6; Название на родном языке; value = Customers for Life
+  originalSecondaryName: string(2048) #Второе оригинальное название; 5; Название поменьше; value = Straight from the Gut  !! возникает если книга была перекуплена другим издательством
+
+  quotes: dict #Цитаты из книги; 109; Список из Заголовка и Цитаты;
+  workDescription: text #Описание работы над книгой; 91; Текст - визивиг.
+  posts: dict #Посты о создании книги; 416; Список постов с загружаемым изображением.
+  team: dict #Команда; 94; Список из текстовых полей Роль/ Фио; Список наших сотрудников; value = [{"MIGX_id":"1","role":"Ответственный редактор ","person":"Михаил Иванов"},{"MIGX_id":"2","role":"Перевод ","person":"Юлия Корнилович"}]
+
+relations:
+  essence: (--) ProductEssence\Essence
+
+  creativePartners: (><) CreativePartner.books #Партнёр; 84; Партнер помогавший в создании книги. Выпадающий список из site_content. value = 12440

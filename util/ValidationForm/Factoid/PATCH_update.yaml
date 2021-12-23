@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\FactoidController
+  Action: update
+  Group: Factoid
+  Method: PATCH
+  Path: /factoid/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: update factoid
+  ru: изменить аттрибуты фактоида
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: VirtualPageResource\Factoid
+      $relations: all
+
+OutputForm:
+  $scalar: integer

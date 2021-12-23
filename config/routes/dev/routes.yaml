@@ -1,0 +1,3 @@
+blog_list:
+  path: /dev/test
+  controller: App\Controller\DevController::test

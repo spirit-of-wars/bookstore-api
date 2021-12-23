@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: authenticationByAppleId
+  Group: UserManager
+  Method: GET
+  Path: /auth/by-apple-id
+  Authentication: free
+  SymfonyRouteName: authentication_by_apple_id
+
+Summary:
+  en: user authentication by apple id
+  ru: аутентификация пользователя по apple id
+
+InputForm:
+  query:
+    code: string required
+
+OutputForm:
+  accessToken: string
+  refreshToken: string

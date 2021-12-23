@@ -1,0 +1,14 @@
+name: ProductGroup\PromoTag
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  oldModxId: integer hidden
+
+  primaryName: string Length(min=1)
+  secondaryName: string Length(min=1)
+  slug: string Length(min=1) Slug()
+  uri: string Length(min=4) Slug()
+
+relations:
+  products: (><) Product.promoTags

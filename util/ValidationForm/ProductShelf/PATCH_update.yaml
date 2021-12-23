@@ -1,0 +1,24 @@
+MetaData:
+  Controller: App\Controller\ProductShelfController
+  Action: update
+  Group: ProductShelf
+  Method: PATCH
+  Path: /product-shelf/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: updates the shelf and products in the shelf by id
+  ru: обновляет полку и товары в полке по id
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: VirtualPageResource\ProductShelf
+      $except: [type, code, name]
+      $relations: all
+
+OutputForm:
+  $scalar: integer

@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\CreativePartnerController
+  Action: getOne
+  Group: CreativePartner
+  Method: GET
+  Path: /creative-partner/{id}
+  Authentication: free
+  SymfonyRouteName: get_one
+
+Summary:
+  en: Get creative partner by id
+  ru: Получение креативного партнера по id
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entity:
+    $name: CreativePartner

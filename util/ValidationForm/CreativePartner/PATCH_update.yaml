@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\CreativePartnerController
+  Action: update
+  Group: CreativePartner
+  Method: PATCH
+  Path: /creative-partner/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: Update creative partner
+  ru: Редактирование креативного партнера
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: CreativePartner
+      $relations: all
+
+OutputForm:
+  $scalar: integer

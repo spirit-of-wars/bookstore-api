@@ -1,0 +1,31 @@
+MetaData:
+  Controller: App\Controller\VirtualPageController
+  Action: getMenu
+  Group: VirtualPage
+  Method: GET
+  Path: /page/menu
+  Authentication: free
+  SymfonyRouteName: get_menu
+
+Summary:
+  en: Virual page List
+  ru: Список виртуальных страниц
+
+Description:
+  en: Task - https://mif.tpondemand.com/entity/11830-api-po-menyu-sajta-i-virtualnym
+  ru: Задача - https://mif.tpondemand.com/entity/11830-api-po-menyu-sajta-i-virtualnym
+
+InputForm:
+  query:
+    level:
+      $type: integer
+      $description: поле на текущий момент не работает. Всегда отдаётся нулевой уровень
+
+OutputForm:
+  $type: array
+  $items:
+    $entity: VirtualPage
+    subMenu:
+      $type: array
+      $items:
+        $entity: VirtualPage

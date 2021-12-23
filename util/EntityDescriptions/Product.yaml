@@ -1,0 +1,68 @@
+# ! - с высокой долей вероятности подлежит удалению
+# ? - непонятно что это, высока доля вероятности, что это "!"
+
+name: Product
+attributes:
+  masterCode:
+    ru: Служебное поле для связывания продуктов
+    en: Service field fot products bounding
+  oldModxId:
+    ru: Идентификатор в старой системе
+    en: Id from old system
+  type:
+    ru: Тип товара
+    en: Product type
+  fullName:
+    ru: Полное наименование товара
+    en: Full product name
+  primaryName:
+    ru: Основная часть полного наименования
+    en: Primary part of full product name
+  secondaryName:
+    ru: Дополнительная часть полного наименования
+    en: Secondary part of full product name
+  slug:
+    ru: Слаг товара
+    en: Product slug
+  uri:
+    ru: URI
+    en: URI
+  image:
+    ru: Изображение товара
+    en: Product image
+  price:
+    ru: Цена продажи
+    en: Price for sale
+  lifeCycleStatus:
+    ru: Статус (создан, отображается, продается)
+    en: Status (created, available for show, available for sale)
+  releaseData:
+    ru: Выходные данные
+    en: Release data
+  startSaleDate:
+    ru: Дата начала продаж
+    en: Start sale date
+  description:
+    ru: Описание товара
+    en: Product description
+  infoInBuyBlock:
+    ru: Информация в блоке покупки
+    en: Information in buy block
+  bannerPlaceName:
+    ru: Название баннерного места (!)
+    en: Banner place name (!)
+  recommendations:
+    ru: Рекомендации
+    en: Recommendations
+  isShowInfoInList:
+    ru: Показывать в списке название и информацию о товаре (?)
+    en: Show product inforamtion in list (?)
+  isBannerShown:
+    ru: Отображать баннер на странице (!)
+    en: Show banner (!)
+  isDimensionlessForPresent:
+    ru: Не занимает места в посылке
+    en: Is dimensionless for present
+  isAvailableForPresent:
+    ru: Можно упаковать в подарок
+    en: Is available for present

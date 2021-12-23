@@ -1,0 +1,14 @@
+name: ProductData\PromoData
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  sendDescription: text #Описание для рассылки; 281; Текст визивиг
+  passageTitle: string(2048) #Название отрывка для отправки почтой на новой карточке книги; 86; Текст
+  passageFile: string(2048) #Отрывок для отправки почтой на новой карточке книги; 85; Загружаемый pdf-файл; value = assets/files/bookparts/017/otnosheniya_mail.pdf
+  metaTagDescription: text # Мета тег description; 53; текст
+  metaTagKeywords: text # Мета тег keywords; 52; текст
+  metaTagOgImage: string # Мета тег og:image; 172; ссылка на картинку; value = http://www.mann-ivanov-ferber.ru/assets/images/categories/child/detstvo3.jpg
+
+relations:
+  product: (--fk) Product.promoData

@@ -1,0 +1,9 @@
+name: ProductProperty\Color
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  value: string
+
+relations:
+  clothes: (><) ProductType\Cloth.colors

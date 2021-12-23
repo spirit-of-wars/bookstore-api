@@ -1,0 +1,9 @@
+# See documentation: https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html
+# Version bundle 3.0
+doctrine_migrations:
+    migrations_paths:
+        'DoctrineMigrations': '%kernel.project_dir%/src/Migrations'
+
+    storage:
+        table_storage:
+            table_name: 'migration_versions'

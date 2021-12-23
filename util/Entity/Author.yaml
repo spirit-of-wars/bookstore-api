@@ -1,0 +1,16 @@
+name: Author
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  oldModxId: integer hidden
+
+  name: string !nullable MifName()
+  enName: string
+  description: text
+  slug: text
+  uri: text
+
+relations:
+  selfProducts:       (-<) ProductEssence\Essence.author
+  coAuthoredProducts: (><) ProductEssence\Essence.coAuthor

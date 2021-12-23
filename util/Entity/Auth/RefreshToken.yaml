@@ -1,0 +1,12 @@
+name: Auth\RefreshToken
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  token: string
+  activatedAt: datetime
+  expire: datetime
+
+relations:
+  confirmLink: (--) Auth\ConfirmLink.refreshToken
+  user: (--fk) User.refreshToken

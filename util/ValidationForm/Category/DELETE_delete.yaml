@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\CategoryController
+  Action: delete
+  Group: Category
+  Method: DELETE
+  Path: /category/{id}
+  Authentication: required
+  SymfonyRouteName: delete
+
+Summary:
+  en: delete the category
+  ru: удалить категорию
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: string example("category is removed")

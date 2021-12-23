@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\BannerController
+  Action: getOne
+  Group: Banner
+  Method: GET
+  Path: /banner/{id}
+  Authentication: free
+  SymfonyRouteName: get_one
+
+Summary:
+  en: get banner by id
+  ru: получить сущность баннер по id
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entity:
+    $name: VirtualPageResource\Banner

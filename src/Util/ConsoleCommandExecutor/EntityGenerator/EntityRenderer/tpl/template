@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Entity<namespace>;
+
+use App\EntitySupport\Common\BaseEntity;
+use App\EntitySupport\Common\BaseEntityTrait;<use>
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="App\Repository<namespace>\<name>Repository")<orm_ext>
+ *
+<methods>
+ */
+class <name> extends BaseEntity<interfaces>
+{
+    use BaseEntityTrait;<traits>
+
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(type="integer")
+     * #App\Field(inForm="inputHidden")
+     */
+    private $id;
+
+<attributes><relations><constructor><implements>
+}

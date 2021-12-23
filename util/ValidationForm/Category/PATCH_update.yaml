@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\CategoryController
+  Action: update
+  Group: Category
+  Method: PATCH
+  Path: /category/{id}
+  Authentication: required
+  SymfonyRouteName: update
+
+Summary:
+  en: update category, дочернии категории subCategorie = array, для указания родительской parentCategory = integer
+  ru: изменить аттрибуты, дочернии категории subCategorie = array, для указания родительской parentCategory = integer
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: ProductGroup\Category
+      $relations: [parentCategory]
+
+OutputForm:
+  $scalar: integer

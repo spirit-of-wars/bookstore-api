@@ -1,0 +1,13 @@
+name: ProductType\Bookmark
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  count: integer [1-] # количество предметов
+  box: string # Упаковка
+  material: string # Материал
+  width: integer #мм
+  height: integer #мм
+
+relations:
+  product: (--) Product

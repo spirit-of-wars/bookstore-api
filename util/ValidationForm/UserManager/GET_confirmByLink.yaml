@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: confirmByLink
+  Group: UserManager
+  Method: GET
+  Path: /auth/authentication
+  Authentication: free
+  SymfonyRouteName: confirmByLink
+
+Summary:
+  en: user authentication
+  ru: аутентификация пользователя
+
+InputForm:
+  query:
+    token: string required
+
+OutputForm:
+  accessToken: string
+  refreshToken: string

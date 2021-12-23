@@ -1,0 +1,13 @@
+name: ProductType\Cloth
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  box: string #Упаковка
+  material: string #Материал
+  materialContent: string
+
+relations:
+  product: (--) Product
+  colors:  (><) ProductProperty\Color.clothes
+  sizes:   (><) ProductProperty\Size.clothes

@@ -1,0 +1,22 @@
+doctrine:
+    dbal:
+        connections:
+            pgsql:
+                driver:   "%env(DB_DRIVER)%"
+                host:     "%env(DB_HOST)%"
+                port:     "%env(DB_PORT)%"
+                dbname:   "%env(DB_NAME)%"
+                user:     "%env(DB_USER)%"
+                password: "%env(DB_PASSWORD)%"
+                charset:  UTF8
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App

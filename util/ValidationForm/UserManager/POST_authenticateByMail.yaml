@@ -1,0 +1,22 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: authenticateByMail
+  Group: UserManager
+  Method: POST
+  Path: /auth/by-mail
+  Authentication: free
+  SymfonyRouteName: authenticate_by_mail
+
+Summary:
+  en: link generation for authentication
+  ru: генрация ссылки для аутетнификации
+
+InputForm:
+  body:
+    email: string required Email() Length(min = 5)
+
+OutputForm:
+  body:
+    $description:
+      ru: При отключенной двухфакторной аутентификации вернет пару токенов. При включенной отправит ссылку на почту, вернет 'ok'.
+      en: If two-factor auth is off will be returned tokens pare. If it's on will be sent link to email, will be returned 'ok'.

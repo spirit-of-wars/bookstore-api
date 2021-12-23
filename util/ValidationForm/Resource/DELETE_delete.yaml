@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\ResourceController
+  Action: delete
+  Group: Resource
+  Method: DELETE
+  Path: /resource/{id}
+  Authentication: free
+  SymfonyRouteName: delete_source
+
+Summary:
+  en: Delete resource
+  ru: Удаление ресурса
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $scalar: integer

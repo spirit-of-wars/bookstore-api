@@ -1,0 +1,9 @@
+name: ProductType\EBook
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  rightsExpiration: datetime # окончание прав; Продается до; 78; Дата когда заканчивается продажа; value = 2017-05-01 00:00:00
+
+relations:
+  product: (--) Product

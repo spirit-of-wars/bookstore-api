@@ -1,0 +1,12 @@
+name: Auth\AccessToken
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  token: string
+  activatedAt: datetime
+  expire: datetime
+
+relations:
+  confirmLink: (--) Auth\ConfirmLink.accessToken
+  user: (--fk) User.accessToken

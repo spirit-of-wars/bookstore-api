@@ -1,0 +1,21 @@
+name: User
+table: users
+behaviors:
+  - ChangeTimeSavingBehavior
+  - UserBehavior
+
+attributes:
+  email: string Email() Length(min=6)
+  firstname: string
+  surname: string
+  spent: integer default(0)
+
+  isConfirmed: boolean default(false)
+  isActive: boolean default(false)
+
+relations:
+  accessToken: (--) Auth\AccessToken.user
+  refreshToken: (--) Auth\RefreshToken.user
+  confirmLink: (--) Auth\ConfirmLink.user
+  roles: (><) Auth\Role.users
+  socNetworks: (-<) Auth\SocNetworkUserData.user

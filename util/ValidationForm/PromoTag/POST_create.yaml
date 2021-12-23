@@ -1,0 +1,21 @@
+MetaData:
+  Controller: App\Controller\PromoTagController
+  Action: create
+  Group: PromoTag
+  Method: POST
+  Path: /promo-tag/
+  Authentication: required
+  SymfonyRouteName: create
+
+Summary:
+  en: create promo tag
+  ru: создать промотэг
+
+InputForm:
+  body:
+    $entity:
+      $name: ProductGroup\PromoTag
+      $relations: [products]
+
+OutputForm:
+  $scalar: integer

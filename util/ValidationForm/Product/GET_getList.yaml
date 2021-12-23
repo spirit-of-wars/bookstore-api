@@ -1,0 +1,34 @@
+MetaData:
+  Controller: App\Controller\ProductController
+  Action: getList
+  Group: Product
+  Method: GET
+  Path: /product/list
+  Authentication: free
+  SymfonyRouteName: get_list
+
+Summary:
+  en: Product List
+  ru: Список товаров
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    query: string
+    lifeCycleStatus:
+      $type: array
+      $description: created - не отображается на сайте; availableForShow - отображается на сайте; availableForSell - доступен для покупки
+      $items:
+        $type: string
+        $constraints: Enum("ProductLifeCycleStatusEnum")
+    type:
+      $type: array
+      $items:
+        $type: string
+        $constraints: Enum("ProductTypeEnum")
+    sortType: string Enum(id, id1c, isbn, type, lifeCycleStatus, startSaleDate, name, price, rrPrice, priceLabyrinth)
+    sortOrder: string Enum(desc, asc)
+
+OutputForm:
+  $macros: EntityList(Product + ProductEssence\Essence)

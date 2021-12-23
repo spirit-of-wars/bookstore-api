@@ -1,0 +1,12 @@
+name: ProductGroup\Category
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  name: string !nullable MifName()
+
+relations:
+  subCategories:  (-<) ProductGroup\Category.parentCategory
+  parentCategory: (>-) ProductGroup\Category.subCategories
+
+  essences: (-<) ProductEssence\Essence.category

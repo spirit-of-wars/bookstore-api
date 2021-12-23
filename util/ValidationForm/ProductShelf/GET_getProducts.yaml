@@ -1,0 +1,19 @@
+MetaData:
+  Controller: App\Controller\ProductShelfController
+  Action: getProducts
+  Group: ProductShelf
+  Method: GET
+  Path: /product-shelf/get-products/{code}
+  Authentication: free
+  SymfonyRouteName: get_products
+
+Summary:
+  en: get shelf and product by code
+  ru: получить полку с продуктами по коду
+
+InputForm:
+  path:
+    code: string
+
+OutputForm:
+  $scalar: array #TODO!

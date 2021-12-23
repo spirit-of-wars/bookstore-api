@@ -1,0 +1,11 @@
+name: ProductType\KitItem
+behaviors:
+  - ChangeTimeSavingBehavior
+
+attributes:
+  count: integer [1-]
+  name:  string(2048)
+
+relations:
+  product: (>-) Product
+  kit:     (>-) ProductType\Kit.items

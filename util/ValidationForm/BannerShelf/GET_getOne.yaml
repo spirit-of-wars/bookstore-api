@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\BannerShelfController
+  Action: getOne
+  Group: BannerShelf
+  Method: GET
+  Path: /banner-shelf/{id}
+  Authentication: free
+  SymfonyRouteName: get_one
+
+Summary:
+  en: get shelf with banner by id
+  ru: получить полку с баннерами по id
+
+InputForm:
+  path:
+    id: integer
+
+OutputForm:
+  $entity:
+    $name: VirtualPageResource\BannerShelf

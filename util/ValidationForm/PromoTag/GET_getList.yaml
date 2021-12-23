@@ -1,0 +1,23 @@
+MetaData:
+  Controller: App\Controller\PromoTagController
+  Action: getList
+  Group: PromoTag
+  Method: GET
+  Path: /promo-tag/list
+  Authentication: free
+  SymfonyRouteName: get_list
+
+Summary:
+  en: get all promo tags
+  ru: получить все промотеги
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+
+OutputForm:
+  $entity:
+    $name: ProductGroup\PromoTag

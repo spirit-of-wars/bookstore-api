@@ -1,0 +1,25 @@
+MetaData:
+  Controller: App\Controller\FactoidController
+  Action: getList
+  Group: Factoid
+  Method: GET
+  Path: /factoid/list
+  Authentication: free
+  SymfonyRouteName: get_list
+
+Summary:
+  en: get list factoid
+  ru: получить список фактоидов
+
+InputForm:
+  query:
+    pageSize: integer
+    page: integer
+    sortType: string
+    sortOrder: string
+    id: integer[]
+    code: string[]
+
+OutputForm:
+  $entity:
+    $name: VirtualPageResource\Factoid

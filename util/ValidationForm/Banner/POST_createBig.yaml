@@ -1,0 +1,31 @@
+MetaData:
+  Controller: App\Controller\BannerController
+  Action: createBig
+  Group: Banner
+  Method: POST
+  Path: /banner/big
+  Authentication: required
+  SymfonyRouteName: create_big_banner
+
+Summary:
+  en: create big banner
+  ru: создать большой баннер
+
+InputForm:
+  body:
+    $entity:
+      $name: VirtualPageResource\Banner
+      $except: [isActiveMiniBanner]
+      $relations: [bannerShelves, virtualPages]
+    image320:
+      $type: integer
+      $description: resource id
+    image480:
+      $type: integer
+      $description: resource id
+    image960:
+      $type: integer
+      $description: resource id
+
+OutputForm:
+  $scalar: integer

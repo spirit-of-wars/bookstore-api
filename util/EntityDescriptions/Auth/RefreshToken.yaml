@@ -1,0 +1,11 @@
+name: Auth\RefreshToken
+attributes:
+  token:
+    ru: токен для получения токена доступа
+    en: token to obtain an access token
+  activatedAt:
+    ru: дата и время активации токена
+    en: Token activation date and time
+  expire:
+    ru: время жизни токена
+    en: token lifetime

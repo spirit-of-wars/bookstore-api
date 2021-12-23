@@ -1,0 +1,20 @@
+MetaData:
+  Controller: App\Controller\AuthController
+  Action: authMobileFb
+  Group: UserManager
+  Method: POST
+  Path: /auth/mobile/by-fb
+  Authentication: free
+  SymfonyRouteName: authentication_mobile_by_fb
+
+Summary:
+  en: auth by fb for mobile app
+  ru: аутентификация через fb для мобильного приложения
+
+InputForm:
+  body:
+    token: string required
+
+OutputForm:
+  accessToken: string
+  refreshToken: string

@@ -1,0 +1,33 @@
+MetaData:
+  Controller: App\Controller\BannerController
+  Action: updateBig
+  Group: Banner
+  Method: PATCH
+  Path: /banner/big/{id}
+  Authentication: required
+  SymfonyRouteName: update_big
+
+Summary:
+  en: update big banner
+  ru: изменить аттрибуты сущности большого баннера
+
+InputForm:
+  path:
+    id: integer
+  body:
+    $entity:
+      $name: VirtualPageResource\Banner
+      $except: [isActiveMiniBanner]
+      $relations: [bannerShelves, virtualPages]
+    image320:
+      $type: integer
+      $description: resource id
+    image480:
+      $type: integer
+      $description: resource id
+    image960:
+      $type: integer
+      $description: resource id
+
+OutputForm:
+  $scalar: integer
